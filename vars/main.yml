@@ -1,0 +1,20 @@
+---
+# vars file for sonarqube
+sonarqube_user: nexus
+sonarqube_group: nexus
+
+sonarqube_url_directory: https://sonarsource.bintray.com/Distribution/sonarqube
+sonarqube_url: "{{ sonarqube_url_directory }}/sonarqube-{{ sonarqube_version }}.zip"
+
+sonarqube_base: /opt/sonar
+sonarqube_home: "{{ sonarqube_base }}/sonarqube-{{ sonarqube_version }}"
+
+sonarqube_mysql_database: sonar
+sonarqube_mysql_host: localhost
+sonarqube_mysql_port: "3306"
+sonarqube_mysql_username: sonar
+sonarqube_mysql_password: sonar
+sonarqube_mysql_allowed_hosts:
+  - 127.0.0.1
+  - ::1
+  - localhost

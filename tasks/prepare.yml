@@ -1,0 +1,18 @@
+---
+#
+- group:
+    name: "{{ sonarqube_group }}"
+    state: present
+
+- user:
+    name: "{{ sonarqube_user }}"
+    group: "{{ sonarqube_group }}"
+    home: "{{ sonarqube_base }}"
+    createhome: yes
+    state: present
+
+- name: install unarchive packages
+  package: name={{ item }} state=latest
+  with_items:
+    - unzip
+    - tar

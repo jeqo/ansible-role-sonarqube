@@ -1,0 +1,11 @@
+---
+# tasks file for sonarqube
+- include: prepare.yml
+  become: yes
+
+- include: mysql.yml
+  become: yes
+
+- include: install.yml
+  become: yes
+  become_user: "{{ sonarqube_user }}"
