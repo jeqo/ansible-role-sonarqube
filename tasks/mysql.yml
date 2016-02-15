@@ -1,4 +1,7 @@
 ---
+- name: install mysql python module
+  pip: name=MySQL-python
+
 - name: create a mylsql database
   mysql_db:
     name: "{{ sonarqube_mysql_database }}"
