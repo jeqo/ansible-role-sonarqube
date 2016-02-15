@@ -5,7 +5,6 @@
 - name: install mysql
   yum: name=mysql-community-server
 
-
 - name: create a mylsql database
   mysql_db:
     name: "{{ sonarqube_mysql_database }}"
