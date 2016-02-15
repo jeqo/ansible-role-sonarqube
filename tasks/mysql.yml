@@ -1,10 +1,10 @@
 ---
 - name: install mysql python module
-  yum: name=python-mysqldb
+  yum: name=MySQL-python
   when: ansible_os_family == "RedHat"
 
 - name: install mysql python module
-  apt: name=MySQL-python
+  apt: name=python-mysqldb
   when: ansible_os_family == "Debian"
 
 - name: create a mylsql database
