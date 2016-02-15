@@ -1,6 +1,6 @@
 ---
 - name: install mysql python module
-  pip: name=MySQL-python
+  pip: name=mysql-python
 
 - name: create a mylsql database
   mysql_db:
