@@ -14,5 +14,6 @@
     line: "{{ item.line }}"
   notify: restart sonar
   with_items:
-    - regexp: "^sonar.jdbc.url"
-        line: "sonar.jdbc.url={{ sonarqube_jdbc_url }}"
+    -
+      regexp: "^sonar.jdbc.url"
+      line: "sonar.jdbc.url={{ sonarqube_jdbc_url }}"
