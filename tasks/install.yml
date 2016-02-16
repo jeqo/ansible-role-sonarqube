@@ -5,6 +5,7 @@
     src: "{{ sonarqube_url }}"
     dest: "{{ sonarqube_base }}"
     owner: "{{ sonarqube_user }}"
+    group: "{{ sonarqube_group }}"
     copy: no
     creates: "{{ sonarqube_home }}/bin/sonar"
   become: yes
