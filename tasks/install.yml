@@ -2,7 +2,7 @@
 #
 - name: install sonarqube
   unarchive:
-    src: "{{ sonarqube_download_url }}"
+    src: "{{ sonarqube_url }}"
     dest: "{{ sonarqube_home }}"
     copy: no
     creates: "{{ sonarqube_home }}/sonar/COPYING"
