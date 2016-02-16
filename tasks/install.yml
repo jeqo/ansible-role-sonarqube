@@ -7,5 +7,5 @@
     owner: "{{ sonarqube_user }}"
     group: "{{ sonarqube_group }}"
     copy: no
-    creates: "{{ sonarqube_home }}/bin/sonar"
+    creates: "{{ sonarqube_home }}/COPYING"
   become: yes
