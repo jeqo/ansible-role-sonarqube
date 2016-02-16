@@ -1,5 +1,10 @@
 ---
 #
+- name: create sonarqube home
+  file:
+    path: "{{ sonarqube_home }}"
+    state: directory
+
 - name: install sonarqube
   unarchive:
     src: "{{ sonarqube_url }}"
