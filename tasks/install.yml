@@ -11,7 +11,8 @@
     dest: "{{ sonarqube_home }}"
     copy: no
     creates: "{{ sonarqube_home }}/sonar/COPYING"
-
+  become: yes
+  
 - name: configure sonarqube database connection
   lineinfile:
     dest: "{{ sonarqube_home }}/conf/sonar.properties"
