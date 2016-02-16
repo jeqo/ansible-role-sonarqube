@@ -3,16 +3,19 @@
 - name: create sonarqube home
   file:
     path: "{{ sonarqube_home }}"
+    owner: "{{ sonarqube_user }}"
+    group: "{{ sonarqube_group }}"
     state: directory
 
 - name: install sonarqube
   unarchive:
     src: "{{ sonarqube_url }}"
-    dest: "{{ sonarqube_home }}"
+    dest: "{{ sonarqube_base }}"
+    owner: "{{ sonarqube_user }}"
     copy: no
-    creates: "{{ sonarqube_home }}/sonar/COPYING"
+    creates: "{{ sonarqube_home }}/bin/sonar"
   become: yes
-  
+
 - name: configure sonarqube database connection
   lineinfile:
     dest: "{{ sonarqube_home }}/conf/sonar.properties"
