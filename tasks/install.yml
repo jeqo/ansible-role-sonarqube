@@ -8,14 +8,3 @@
     copy: no
     creates: "{{ sonarqube_home }}/bin/sonar"
   become: yes
-
-- name: configure sonarqube database connection
-  lineinfile:
-    dest: "{{ sonarqube_home }}/conf/sonar.properties"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-  notify: restart sonar
-  with_items:
-    -
-      regexp: "^sonar.jdbc.url"
-      line: "sonar.jdbc.url={{ sonarqube_jdbc_url }}"

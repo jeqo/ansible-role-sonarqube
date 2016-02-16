@@ -1,7 +1,7 @@
 ---
 # vars file for sonarqube
-sonarqube_user: nexus
-sonarqube_group: nexus
+sonarqube_user: sonar
+sonarqube_group: sonar
 
 sonarqube_url_directory: https://sonarsource.bintray.com/Distribution/sonarqube
 sonarqube_url: "{{ sonarqube_url_directory }}/sonarqube-{{ sonarqube_version }}.zip"
