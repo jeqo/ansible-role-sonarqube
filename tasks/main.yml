@@ -4,3 +4,7 @@
   become: yes
 
 - include: install.yml
+
+- include: configure.yml
+  become: yes
+  become_user: "{{ sonarqube_user }}"

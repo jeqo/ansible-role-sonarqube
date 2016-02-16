@@ -1,12 +1,6 @@
 ---
 #
-- name: configure sonarqube database connection
-  lineinfile:
+- name: configure sonarqube
+  template:
+    src: sonar.properties.j2
     dest: "{{ sonarqube_home }}/conf/sonar.properties"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-  notify: restart sonar
-  with_items:
-    -
-      regexp: "^sonar.jdbc.url"
-      line: "sonar.jdbc.url={{ sonarqube_jdbc_url }}"

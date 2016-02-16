@@ -9,4 +9,8 @@ sonarqube_url: "{{ sonarqube_url_directory }}/sonarqube-{{ sonarqube_version }}.
 sonarqube_base: /opt/sonar
 sonarqube_home: "{{ sonarqube_base }}/sonarqube-{{ sonarqube_version }}"
 
-sonarqube_jdbc_url: jdbc:h2:tcp://localhost:9092/sonar
+sonarqube_embedded_database_port: 9092
+
+sonarqube_web_host: 0.0.0.0
+sonarqube_web_context:
+sonarqube_web_port: 9000
